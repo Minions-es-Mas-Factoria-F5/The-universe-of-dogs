@@ -14,12 +14,19 @@
       <v-container>
         <v-row>
           <v-col v-for="n in 9" :key="n" cols="4">
-            <v-card class="mx-auto" max-width="344" outlined>
-              <v-list-item-avatar
-                tile
-                size="80"
-                color="grey"
-              ></v-list-item-avatar>
+            <v-card
+              class="mx-auto rounded-xl"
+              max-width="357"
+              height="180"
+              color="#FFC086"
+            >
+              <v-img
+                class="rounded-xl float-left"
+                width="184"
+                height="180"
+                lazy-src="https://picsum.photos/id/11/10/6"
+                src="https://picsum.photos/id/11/500/300"
+              ></v-img>
               <v-list-item three-line>
                 <v-list-item-content>
                   <v-list-item-title class="text-h5 mb-1">
@@ -32,6 +39,7 @@
               </v-list-item>
               <v-card-actions>
                 <v-btn outlined rounded text>Button</v-btn>
+                <v-icon large mdi-Heart></v-icon>
               </v-card-actions>
               <v-btn outlined rounded text> Editar </v-btn>
             </v-card>
