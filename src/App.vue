@@ -6,6 +6,9 @@
       </v-container>
     </v-header>
     <v-main>
+      <v-subheader>
+        <h1>Hello World</h1>
+      </v-subheader>
       <v-container>
         <v-row>
           <v-col v-for="n in 9" :key="n" cols="4">
