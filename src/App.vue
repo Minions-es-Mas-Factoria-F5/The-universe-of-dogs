@@ -1,13 +1,15 @@
 <template>
   <v-app id="inspire">
     <v-header>
-      <v-container>
-        <h1>HelloWorld</h1>
-      </v-container>
+      <div class="color1">
+        <h1 align-center justify-center>
+          Hello I am center to vertically using "align-center".
+        </h1>
+      </div>
     </v-header>
     <v-main>
-      <v-subheader>
-        <h1>Hello World</h1>
+      <v-subheader class="list">
+        <h2>Hello World</h2>
       </v-subheader>
       <v-container>
         <v-row>
@@ -73,3 +75,19 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+v-header {
+  background-color: red;
+  .color1 {
+    background-color: blue;
+    justify-content: center;
+    display: flex;
+  }
+}
+.list {
+  background-color: green;
+  justify-content: center;
+  display: flex;
+}
+</style>
