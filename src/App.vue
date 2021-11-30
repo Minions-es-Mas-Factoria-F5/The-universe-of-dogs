@@ -23,13 +23,13 @@
                   <v-list-item-title class="text-h5 mb-1">
                     Headline 5
                   </v-list-item-title>
-                  <v-list-item-subtitle
-                    >Greyhound divisely hello coldly fonwderfully
+                  <v-list-item-subtitle>
+                    Greyhound divisely hello coldly fonwderfully
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-actions>
-                <v-btn outlined rounded text> Button </v-btn>
+                <v-btn outlined rounded text>Button</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -52,13 +52,17 @@
             class="primary lighten-2 py-4 text-center white--text"
             cols="12"
           >
-            <strong>Copyright</strong>
+            <strong class="">Copyright</strong>
           </v-col>
         </v-row>
       </v-footer>
     </v-main>
   </v-app>
 </template>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
+</style>
 
 <script>
 export default {
