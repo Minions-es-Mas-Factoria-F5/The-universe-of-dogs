@@ -1,13 +1,15 @@
 <template>
   <v-app id="inspire">
     <v-header>
-      <v-container>
-        <h1>HelloWorld</h1>
-      </v-container>
+      <div class="color1">
+        <h1 align-center justify-center>
+          Hello I am center to vertically using "align-center".
+        </h1>
+      </div>
     </v-header>
     <v-main>
-      <v-subheader>
-        <h1>Hello World</h1>
+      <v-subheader class="list">
+        <h2>Hello World</h2>
       </v-subheader>
       <v-container>
         <v-row>
@@ -21,7 +23,7 @@
               <v-list-item three-line>
                 <v-list-item-content>
                   <v-list-item-title class="text-h5 mb-1">
-                    Headline 5
+                    Raza
                   </v-list-item-title>
                   <v-list-item-subtitle>
                     Greyhound divisely hello coldly fonwderfully
@@ -31,32 +33,29 @@
               <v-card-actions>
                 <v-btn outlined rounded text>Button</v-btn>
               </v-card-actions>
+              <v-btn outlined rounded text> Editar </v-btn>
             </v-card>
           </v-col>
         </v-row>
       </v-container>
-
-      <v-footer color="primary lighten-1" padless>
-        <v-row justify="center" no-gutters>
-          <v-btn
-            v-for="link in links"
-            :key="link"
-            color="white"
-            text
-            rounded
-            class="my-2"
-          >
-            {{ link }}
-          </v-btn>
-          <v-col
-            class="primary lighten-2 py-4 text-center white--text"
-            cols="12"
-          >
-            <strong class="">Copyright</strong>
-          </v-col>
-        </v-row>
-      </v-footer>
     </v-main>
+    <v-footer color="primary lighten-1" padless>
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          color="white"
+          text
+          rounded
+          class="my-2"
+        >
+          {{ link }}
+        </v-btn>
+        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+          <strong class="">Copyright</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
@@ -73,3 +72,19 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+v-header {
+  background-color: red;
+  .color1 {
+    background-color: blue;
+    justify-content: center;
+    display: flex;
+  }
+}
+.list {
+  background-color: green;
+  justify-content: center;
+  display: flex;
+}
+</style>
