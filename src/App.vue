@@ -1,40 +1,39 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+  <v-app id="inspire">
+    <v-header>
+      <v-container>
+        <h1>HelloWorld</h1>
+      </v-container>
+    </v-header>
     <v-main>
-      <router-view />
+      <v-container>
+        <v-row>
+          <v-col v-for="n in 9" :key="n" cols="4">
+            <v-card height="200"></v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <v-footer color="primary lighten-1" padless>
+        <v-row justify="center" no-gutters>
+          <v-btn
+            v-for="link in links"
+            :key="link"
+            color="white"
+            text
+            rounded
+            class="my-2"
+          >
+            {{ link }}
+          </v-btn>
+          <v-col
+            class="primary lighten-2 py-4 text-center white--text"
+            cols="12"
+          >
+            <strong>Copyright</strong>
+          </v-col>
+        </v-row>
+      </v-footer>
     </v-main>
   </v-app>
 </template>
@@ -44,7 +43,7 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    links: ["Contact", "Follow", "About"],
   }),
 };
 </script>
