@@ -52,6 +52,7 @@
                 </v-list-item-content>
               </v-list-item>
               <v-card-actions>
+                <v-img src="./assets/heart.png"> </v-img>
                 <v-btn
                   class="btn-edit"
                   color="rgba(144, 83, 83, 1)"
