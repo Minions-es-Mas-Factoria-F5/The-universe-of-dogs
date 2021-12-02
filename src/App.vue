@@ -19,11 +19,12 @@
             <v-col v-for="n in 9" :key="n" cols="4">
               <v-card class="mx-auto rounded-xl card-styles" color="#ffc086">
                 <v-img
+                  id="dogs-img"
                   class="rounded-xl float-left"
                   width="184"
                   height="180"
-                  lazy-src="https://picsum.photos/id/11/10/6"
-                  src="https://picsum.photos/id/11/500/300"
+                  lazy-src="https://images.dog.ceo/breeds/cattledog-australian/IMG_1211.jpg"
+                  src="https://images.dog.ceo/breeds/cattledog-australian/IMG_1211.jpg"
                 ></v-img>
                 <v-list-item class="breed">
                   <v-list-item-content>
