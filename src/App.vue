@@ -25,21 +25,22 @@
                   lazy-src="https://picsum.photos/id/11/10/6"
                   src="https://picsum.photos/id/11/500/300"
                 ></v-img>
-                <v-card-actions>
-                  <v-list-item class="breed">
-                    <v-list-item-content>
-                      <v-list-item-title
-                        class="text-h5 mb-1 d-flex justify-center"
-                        display-font="auto"
-                      >
-                        Raza
-                      </v-list-item-title>
-                    </v-list-item-content>
-                  </v-list-item>
+                <v-list-item class="breed">
+                  <v-list-item-content>
+                    <v-list-item-title
+                      class="text-h5 mb-1 d-flex justify-center mt-8"
+                      display-font="auto"
+                    >
+                      Raza
+                    </v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-card-actions class="d-flex justify-center">
                   <v-icon
-                    ><span class="material-icons favorite_border heart"></span
+                    ><span class="material-icons favorite_border" width></span
                   ></v-icon>
                   <!--  <v-btn class="btn-all" rounded text> Editar </v-btn> -->
+                  <img src="./assets/heart-icon-dogs.svg" width="34px" />
                 </v-card-actions>
               </v-card>
             </v-col>
