@@ -1,86 +1,65 @@
 <template>
   <v-app id="inspire" font-family="Rasa">
-    <v-header>
-      <div class="logotype">
-        <h1>Logotype</h1>
-      </div>
+    <v-header class="d-flex justify-center">
+      <!--  <v-img class="logotype" src="./assets/logo.png"></v-img> -->
+      <img src="./assets/logo-map.png" width="200px" />
     </v-header>
-    <v-main>
-      <v-subheader class="views">
-        <div>
-          <v-btn
-            class="btn-list"
-            color="rgba(144, 83, 83, 1)"
-            outlined
-            rounded
-            text
-            >Lista</v-btn
-          >
-        </div>
-        <div>
-          <v-btn
-            class="btn-favourites"
-            color="rgba(144, 83, 83, 1)"
-            outlined
-            rounded
-            text
-            >Favoritos</v-btn
-          >
-        </div>
-      </v-subheader>
-      <v-container>
-        <v-row>
-          <v-col v-for="n in 9" :key="n" cols="4">
-            <v-card
-              class="mx-auto rounded-xl"
-              min-width="357"
-              height="180"
-              color="#FFC086"
-            >
-              <v-img
-                class="rounded-xl float-left"
-                width="184"
-                height="180"
-                lazy-src="https://picsum.photos/id/11/10/6"
-                src="https://picsum.photos/id/11/500/300"
-              ></v-img>
-              <v-list-item three-line>
-                <v-list-item-content>
-                  <v-list-item-title class="text-h5 mb-1">
-                    Raza
-                  </v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-              <v-card-actions>
-                <v-btn
-                  class="btn-edit"
-                  color="rgba(144, 83, 83, 1)"
-                  outlined
-                  rounded
-                  text
-                >
-                  Editar
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-    <v-footer color="rgba(255, 224, 144, 1)" padless>
+    <v-body>
+      <v-main>
+        <!-- <v-subheader class="views">
+          <div>
+            <v-btn class="btn-header btn-all" rounded text>Lista</v-btn>
+          </div>
+          <div>
+            <v-btn class="btn-header btn-all" rounded text>Favoritos</v-btn>
+          </div>
+        </v-subheader> -->
+        <v-container>
+          <v-row>
+            <v-col v-for="n in 9" :key="n" cols="4">
+              <v-card class="mx-auto rounded-xl card-styles" color="#ffc086">
+                <v-img
+                  class="rounded-xl float-left"
+                  width="184"
+                  height="180"
+                  lazy-src="https://picsum.photos/id/11/10/6"
+                  src="https://picsum.photos/id/11/500/300"
+                ></v-img>
+                <v-card-actions>
+                  <v-list-item class="breed">
+                    <v-list-item-content>
+                      <v-list-item-title
+                        class="text-h5 mb-1 d-flex justify-center"
+                        display-font="auto"
+                      >
+                        Raza
+                      </v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                  <v-icon
+                    ><span class="material-icons favorite_border heart"></span
+                  ></v-icon>
+                  <!--  <v-btn class="btn-all" rounded text> Editar </v-btn> -->
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-body>
+    <v-footer color="rgba(255, 224, 144, 1)" padless height="130px">
       <v-row justify="center" no-gutters>
-        <v-btn
+        <!-- <v-btn
+          class="btn-all my-2 links"
           v-for="link in links"
           :key="link"
-          color="rgba(144, 83, 83, 1)"
           text
           rounded
-          class="my-2 links"
         >
           {{ link }}
-        </v-btn>
+        </v-btn> -->
         <v-col class="text-center" cols="12">
-          <strong class="copyright">Copyright</strong>
+          <strong class="copyright">Copyright &copy;</strong>
         </v-col>
       </v-row>
     </v-footer>
@@ -88,57 +67,71 @@
 </template>
 
 <script>
-export default {
+/* export default {
   name: "App",
-
   data: () => ({
     links: ["Contact", "Follow", "About"],
   }),
-};
+}; */
 </script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
-v-app {
-  font-family: Rasa, "Rasa";
-}
+
 v-header {
   background-color: rgba(255, 224, 144, 1);
-  height: 100px;
-  .logotype {
+  height: 150px;
+  padding: 1em;
+  display: flex;
+  /* .logotype {
     justify-content: center;
-    display: flex;
+    text-align: center;
+    width: 7px;
+  } */
+}
+v-body {
+  background-color: #ffeed4;
+  padding: 4em;
+  font-family: Rasa;
+}
+v-footer {
+  padding: 4em;
+  height: 130px;
+  .links {
+    widows: 37px;
+    height: 112px;
+  }
+  .copyright {
+    color: rgba(144, 83, 83, 1);
   }
 }
 .views {
-  margin-top: 25px;
   margin-bottom: 25px;
   justify-content: center;
   display: flex;
-  .btn-list {
+  .btn-header {
     width: 127px;
     height: 37px;
-    margin-right: 20px;
-    background: #bafefa;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .btn-favourites {
-    background: #bafefa;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 18px;
   }
 }
-.btn-edit {
+.btn-all {
   background: #bafefa;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 7px;
 }
-.links {
-  widows: 37px;
-  height: 112px;
-  margin-right: 10px;
-  background: #bafefa;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.btn-all:hover {
+  background: white;
 }
-.copyright {
-  color: rgba(144, 83, 83, 1);
+.btn-all:focus {
+  background: white;
+}
+.btn-all:active {
+  background: white;
+}
+.card-styles {
+  min-width: 357px;
+  height: 180px;
+  font-family: Rasa, "Rasa";
 }
 </style>
