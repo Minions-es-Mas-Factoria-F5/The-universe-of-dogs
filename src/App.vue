@@ -61,7 +61,7 @@
           {{ link }}
         </v-btn> -->
         <v-col class="text-center" cols="12">
-          <strong class="copyright">Copyright &copy;</strong>
+          <strong class="copyright">Minions Es Más &copy;</strong>
         </v-col>
       </v-row>
     </v-footer>
