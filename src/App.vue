@@ -1,20 +1,31 @@
 <template>
   <v-app id="inspire" font-family="Rasa">
     <v-header class="d-flex justify-center">
-      <!--  <v-img class="logotype" src="./assets/logo.png"></v-img> -->
       <img src="./assets/logo-map.png" width="200px" />
     </v-header>
     <v-body>
       <v-main>
-        <!-- <v-subheader class="views">
+        <v-subheader class="views">
           <div>
-            <v-btn class="btn-header btn-all" rounded text>Lista</v-btn>
+            <router-link to="/List" class="btn-header btn-all" rounded text
+              >Lista</router-link
+            >
           </div>
           <div>
-            <v-btn class="btn-header btn-all" rounded text>Favoritos</v-btn>
+            <router-link
+              to="/Favourites"
+              class="btn-header btn-all"
+              rounded
+              text
+              >Favourites</router-link
+            >
           </div>
-        </v-subheader> -->
-        <v-container>
+        </v-subheader>
+      </v-main>
+    </v-body>
+  </v-app>
+</template>
+<!-- <v-container>
           <v-row>
             <v-col v-for="n in 9" :key="n" cols="4">
               <v-card class="mx-auto rounded-xl card-styles" color="#ffc086">
@@ -39,7 +50,7 @@
                   <v-icon
                     ><span class="material-icons favorite_border" width></span
                   ></v-icon>
-                  <!--  <v-btn class="btn-all" rounded text> Editar </v-btn> -->
+                  <v-btn class="btn-all" rounded text> Editar </v-btn>
                   <img src="./assets/heart-icon-dogs.svg" width="34px" />
                 </v-card-actions>
               </v-card>
@@ -50,7 +61,7 @@
     </v-body>
     <v-footer color="rgba(255, 224, 144, 1)" padless height="130px">
       <v-row justify="center" no-gutters>
-        <!-- <v-btn
+        <v-btn
           class="btn-all my-2 links"
           v-for="link in links"
           :key="link"
@@ -58,22 +69,19 @@
           rounded
         >
           {{ link }}
-        </v-btn> -->
+        </v-btn>
         <v-col class="text-center" cols="12">
           <strong class="copyright">Copyright &copy;</strong>
         </v-col>
       </v-row>
-    </v-footer>
-  </v-app>
-</template>
-
+    </v-footer> -->
 <script>
-/* export default {
+export default {
   name: "App",
   data: () => ({
     links: ["Contact", "Follow", "About"],
   }),
-}; */
+};
 </script>
 
 <style lang="scss">
@@ -84,11 +92,11 @@ v-header {
   height: 150px;
   padding: 1em;
   display: flex;
-  /* .logotype {
+  .logotype {
     justify-content: center;
     text-align: center;
     width: 7px;
-  } */
+  }
 }
 v-body {
   background-color: #ffeed4;
@@ -136,3 +144,4 @@ v-footer {
   font-family: Rasa, "Rasa";
 }
 </style>
+*/
