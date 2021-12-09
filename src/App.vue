@@ -64,6 +64,9 @@
           </v-layout>
         </v-container>
       </v-main>
+      <script src="./views/Newimage.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </v-body>
     <v-footer color="rgba(255, 224, 144, 1)" padless height="130px">
       <v-row justify="center" no-gutters>
