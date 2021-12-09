@@ -1,9 +1,9 @@
-function genNewImage() {
-  "https://dog.ceo/api/breeds/image/random" // pendiente fetch
+/* function genNewImage() {
+  fetch("https://dog.ceo/api/breeds/image/random")
     .then((body) => {
       let url = body.data.message;
-      let image = document.getElementById("dogImg");
-      let dogText = document.getElementById("dogText");
+      let image = document.getElementById("dogs-img");
+      let dogText = document.getElementById("dogs-text");
 
       let urlCutter = url.split("/")[4].split("-");
       let first =
@@ -22,3 +22,4 @@ function genNewImage() {
     });
 }
 genNewImage();
+ */

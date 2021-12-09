@@ -35,16 +35,14 @@
                       class="rounded-xl float-left"
                       width="184"
                       height="180"
-                      src="https://images.dog.ceo/breeds/cattledog-australian/IMG_1211.jpg"
                     ></v-img>
                     <v-list-item class="breed">
                       <v-list-item-content>
                         <v-list-item-title
+                          id="dogs-text"
                           class="text-h5 mb-1 d-flex justify-center mt-8"
                           display-font="auto"
-                        >
-                          Raza
-                        </v-list-item-title>
+                        ></v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                     <v-card-actions class="d-flex justify-center">
@@ -64,9 +62,6 @@
           </v-layout>
         </v-container>
       </v-main>
-      <script src="./views/Newimage.js"></script>
-
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </v-body>
     <v-footer color="rgba(255, 224, 144, 1)" padless height="130px">
       <v-row justify="center" no-gutters>
@@ -86,7 +81,6 @@
     </v-footer>
   </v-app>
 </template>
-
 <script>
 export default {
   name: "App",
@@ -94,8 +88,31 @@ export default {
     links: ["Contact", "Follow", "About"],
   }),
 };
-</script>
+function genNewImage() {
+  fetch("https://dog.ceo/api/breeds/image/random")
+    .then((body) => {
+      let url = body.data.message;
+      let image = document.getElementById("dogs-img");
+      let dogText = document.getElementById("dogs-text");
 
+      let urlCutter = url.split("/")[4].split("-");
+      let first =
+        typeof urlCutter[1] == "undefined"
+          ? ""
+          : urlCutter[1].charAt(0).toUpperCase() +
+            urlCutter[1].split("").slice(1, urlCutter[1].length).join("");
+      let second =
+        urlCutter[0].charAt(0).toUpperCase() +
+        urlCutter[0].split("").slice(1, urlCutter[0].length).join("");
+      image.src = url; // set the src of the image object
+      dogText.innerHTML = "This is a: " + first + " " + second; //Set the dog breed name in the paragraph
+    })
+    .catch((error) => {
+      console.log(error.response);
+    });
+}
+genNewImage();
+</script>
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
 
