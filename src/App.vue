@@ -21,41 +21,47 @@
             >
           </div>
         </v-subheader>
-      </v-main>
-    </v-body>
-  </v-app>
-</template>
-<!-- <v-container>
-          <v-row>
-            <v-col v-for="n in 9" :key="n" cols="4">
-              <v-card class="mx-auto rounded-xl card-styles" color="#ffc086">
-                <v-img
-                  class="rounded-xl float-left"
-                  width="184"
-                  height="180"
-                  lazy-src="https://picsum.photos/id/11/10/6"
-                  src="https://picsum.photos/id/11/500/300"
-                ></v-img>
-                <v-list-item class="breed">
-                  <v-list-item-content>
-                    <v-list-item-title
-                      class="text-h5 mb-1 d-flex justify-center mt-8"
-                      display-font="auto"
-                    >
-                      Raza
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-card-actions class="d-flex justify-center">
-                  <v-icon
-                    ><span class="material-icons favorite_border" width></span
-                  ></v-icon>
-                  <v-btn class="btn-all" rounded text> Editar </v-btn>
-                  <img src="./assets/heart-icon-dogs.svg" width="34px" />
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
+        <v-container grid-list-sm>
+          <v-layout row wrap>
+            <v-flex>
+              <v-row>
+                <v-col v-for="n in 9" :key="n" cols="4" md="6" sm="12" lg="4">
+                  <v-card
+                    class="mx-auto rounded-xl card-styles"
+                    color="#ffc086"
+                  >
+                    <v-img
+                      id="dogs-img"
+                      class="rounded-xl float-left"
+                      width="184"
+                      height="180"
+                      src="https://images.dog.ceo/breeds/cattledog-australian/IMG_1211.jpg"
+                    ></v-img>
+                    <v-list-item class="breed">
+                      <v-list-item-content>
+                        <v-list-item-title
+                          class="text-h5 mb-1 d-flex justify-center mt-8"
+                          display-font="auto"
+                        >
+                          Raza
+                        </v-list-item-title>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-card-actions class="d-flex justify-center">
+                      <v-icon
+                        ><span
+                          class="material-icons favorite_border"
+                          width
+                        ></span
+                      ></v-icon>
+                      <v-btn class="btn-all" rounded text> Editar </v-btn>
+                      <img src="./assets/heart-icon-dogs.svg" width="34px" />
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-flex>
+          </v-layout>
         </v-container>
       </v-main>
     </v-body>
@@ -71,10 +77,13 @@
           {{ link }}
         </v-btn>
         <v-col class="text-center" cols="12">
-          <strong class="copyright">Copyright &copy;</strong>
+          <strong class="copyright">Minions es Más &copy;</strong>
         </v-col>
       </v-row>
-    </v-footer> -->
+    </v-footer>
+  </v-app>
+</template>
+
 <script>
 export default {
   name: "App",
@@ -144,4 +153,3 @@ v-footer {
   font-family: Rasa, "Rasa";
 }
 </style>
-*/
