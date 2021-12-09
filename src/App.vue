@@ -4,7 +4,7 @@
       <img src="./assets/logo-map.png" width="200px" />
     </v-header>
     <v-body>
-      <v-main>
+      <main>
         <v-subheader class="views">
           <div>
             <router-link to="/List" class="btn-header btn-all" rounded text
@@ -31,6 +31,7 @@
                     color="#ffc086"
                   >
                     <v-img
+                      src="https://images.dog.ceo/breeds/pinscher-miniature/n02107312_2072.jpg"
                       id="dogs-img"
                       class="rounded-xl float-left"
                       width="184"
@@ -40,7 +41,7 @@
                       <v-list-item-content>
                         <v-list-item-title
                           id="dogs-text"
-                          class="text-h5 mb-1 d-flex justify-center mt-8"
+                          class="text-h7 mb-1 d-flex justify-fi mt-8"
                           display-font="auto"
                         ></v-list-item-title>
                       </v-list-item-content>
@@ -52,7 +53,6 @@
                           width
                         ></span
                       ></v-icon>
-                      <v-btn class="btn-all" rounded text> Editar </v-btn>
                       <img src="./assets/heart-icon-dogs.svg" width="34px" />
                     </v-card-actions>
                   </v-card>
@@ -61,21 +61,12 @@
             </v-flex>
           </v-layout>
         </v-container>
-      </v-main>
+      </main>
     </v-body>
     <v-footer color="rgba(255, 224, 144, 1)" padless height="130px">
       <v-row justify="center" no-gutters>
-        <v-btn
-          class="btn-all my-2 links"
-          v-for="link in links"
-          :key="link"
-          text
-          rounded
-        >
-          {{ link }}
-        </v-btn>
         <v-col class="text-center" cols="12">
-          <strong class="copyright">Minions es Más &copy;</strong>
+          <p class="text-h7 copyright">Minions es Más &copy;</p>
         </v-col>
       </v-row>
     </v-footer>
@@ -84,34 +75,34 @@
 <script>
 export default {
   name: "App",
-  data: () => ({
-    links: ["Contact", "Follow", "About"],
-  }),
+  created: () => {
+    function api() {
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then((response) => response.json())
+        .then((data) => {
+          let url = data.message;
+          let dogText = document.getElementById("dogs-text");
+          let image = document.getElementById("dogs-img");
+          let urlCutter = url.split("/")[4].split("-");
+          let first =
+            typeof urlCutter[1] == "undefined"
+              ? ""
+              : urlCutter[1].charAt(0).toUpperCase() +
+                urlCutter[1].split("").slice(1, urlCutter[1].length).join("");
+          let second =
+            urlCutter[0].charAt(0).toUpperCase() +
+            urlCutter[0].split("").slice(1, urlCutter[0].length).join("");
+          image.src = url;
+          console.log(image.src);
+          dogText.innerHTML = first + " " + second;
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+    }
+    api();
+  },
 };
-function genNewImage() {
-  fetch("https://dog.ceo/api/breeds/image/random")
-    .then((body) => {
-      let url = body.data.message;
-      let image = document.getElementById("dogs-img");
-      let dogText = document.getElementById("dogs-text");
-
-      let urlCutter = url.split("/")[4].split("-");
-      let first =
-        typeof urlCutter[1] == "undefined"
-          ? ""
-          : urlCutter[1].charAt(0).toUpperCase() +
-            urlCutter[1].split("").slice(1, urlCutter[1].length).join("");
-      let second =
-        urlCutter[0].charAt(0).toUpperCase() +
-        urlCutter[0].split("").slice(1, urlCutter[0].length).join("");
-      image.src = url; // set the src of the image object
-      dogText.innerHTML = "This is a: " + first + " " + second; //Set the dog breed name in the paragraph
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
-}
-genNewImage();
 </script>
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Rasa:wght@300&display=swap");
@@ -138,9 +129,6 @@ v-footer {
   .links {
     widows: 37px;
     height: 112px;
-  }
-  .copyright {
-    color: rgba(144, 83, 83, 1);
   }
 }
 .views {

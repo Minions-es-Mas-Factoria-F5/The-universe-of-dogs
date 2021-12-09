@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import List from "../views/List.vue";
-import Favourites from "../views/Favourites.vue";
 Vue.use(VueRouter);
 
 const routes = [
